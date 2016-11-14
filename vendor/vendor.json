@@ -1,0 +1,19 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "JmVIAS/jAQftWaHkTvIxu89xvu8=",
+			"path": "github.com/garyburd/redigo/redis",
+			"revision": "883846756944ba1450adb0d7d3083b49d1b5c3b5",
+			"revisionTime": "2016-11-10T22:20:26Z"
+		},
+		{
+			"checksumSHA1": "6gvGCe6dtbLoSVpaIJAw1Zjh6kg=",
+			"path": "gopkg.in/redis.v5",
+			"revision": "019ff6eb38ef232dbf116aeb08780588be207417",
+			"revisionTime": "2016-11-11T23:47:49Z"
+		}
+	],
+	"rootPath": "github.com/freeformz/testRediss"
+}
