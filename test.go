@@ -20,7 +20,7 @@ func RedissURL(s string) (string, error) {
 		return "", err
 	}
 	port++
-	u.scheme = "rediss"
+	u.Scheme = "rediss"
 
 	u.Host = net.JoinHostPort(h, strconv.Itoa(port))
 	return u.String(), nil
