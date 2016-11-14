@@ -5,7 +5,7 @@ import (
 	"os"
 
 	"github.com/freeformz/testrediss"
-	"github.com/garyburd/redigo/redis"
+	"gopkg.in/redis.v5"
 )
 
 func main() {
@@ -13,19 +13,14 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	c, err := redis.DialURL(u)
+	o, err := redis.ParseURL(u)
 	if err != nil {
 		panic(err)
 	}
-	if err := c.Send("SET", "foo", "bar"); err != nil {
-		panic(err)
-	}
-	if err := c.Flush(); err != nil {
-		panic(err)
-	}
-	r, err := c.Receive()
+	c := redis.NewClient(o)
+	pong, err := c.Ping().Result()
 	if err != nil {
 		panic(err)
 	}
-	fmt.Println(r)
+	fmt.Println(pong)
 }
