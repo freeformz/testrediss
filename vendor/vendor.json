@@ -20,6 +20,12 @@
 			"revisionTime": "2016-11-10T22:20:26Z"
 		},
 		{
+			"checksumSHA1": "+4r0PnLwwyhO5/jvU5R/TEJb4kA=",
+			"path": "gopkg.in/bsm/ratelimit.v1",
+			"revision": "db14e161995a5177acef654cb0dd785e8ee8bc22",
+			"revisionTime": "2016-02-20T15:49:07Z"
+		},
+		{
 			"checksumSHA1": "6gvGCe6dtbLoSVpaIJAw1Zjh6kg=",
 			"path": "gopkg.in/redis.v5",
 			"revision": "019ff6eb38ef232dbf116aeb08780588be207417",
