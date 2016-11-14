@@ -13,6 +13,8 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("url:", u)
+
 	o, err := redis.ParseURL(u)
 	if err != nil {
 		panic(err)

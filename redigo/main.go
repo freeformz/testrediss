@@ -13,6 +13,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("url:", u)
 	c, err := redis.DialURL(u)
 	if err != nil {
 		panic(err)
