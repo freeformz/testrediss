@@ -1,4 +1,7 @@
 {
+  "heroku" : {
+    "install": [ "./..." ]
+  },
 	"comment": "",
 	"ignore": "test",
 	"package": [
