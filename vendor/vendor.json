@@ -14,10 +14,10 @@
 			"revisionTime": "2016-11-10T22:20:26Z"
 		},
 		{
-			"checksumSHA1": "NwcUZL60LpBk+88e9FGD2gFte+M=",
+			"checksumSHA1": "CbdnmMJNm9Ed9hfo4EBi9h9whKQ=",
 			"path": "github.com/garyburd/redigo/redis",
-			"revision": "03b32d3ac8540124cc469c2c4efbbc43bd2460e3",
-			"revisionTime": "2016-11-15T23:21:57Z"
+			"revision": "a1e48334e56c21a1372512741abb971d098ed49c",
+			"revisionTime": "2016-11-21T21:29:08Z"
 		},
 		{
 			"checksumSHA1": "+4r0PnLwwyhO5/jvU5R/TEJb4kA=",

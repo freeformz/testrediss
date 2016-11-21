@@ -77,6 +77,7 @@ type dialOptions struct {
 	db           int
 	password     string
 	dialTLS      bool
+	skipVerify   bool
 	tlsConfig    *tls.Config
 }
 
@@ -134,6 +135,14 @@ func DialTLSConfig(c *tls.Config) DialOption {
 	}}
 }
 
+// DialTLSSkipVerify to set disable server name verification when connecting
+// over TLS.
+func DialTLSSkipVerify(skip bool) DialOption {
+	return DialOption{func(do *dialOptions) {
+		do.skipVerify = skip
+	}}
+}
+
 // Dial connects to the Redis server at the given network and
 // address using the specified options.
 func Dial(network, address string, options ...DialOption) (Conn, error) {
@@ -150,14 +159,20 @@ func Dial(network, address string, options ...DialOption) (Conn, error) {
 	}
 
 	if do.dialTLS {
-		tlsConfig := do.tlsConfig
-		if tlsConfig == nil {
-			// https://golang.org/pkg/crypto/tls/#Client
-			// At this point we don't know the ServerName.
-			tlsConfig = &tls.Config{InsecureSkipVerify: true}
+		tlsConfig := cloneTLSClientConfig(do.tlsConfig)
+		tlsConfig.InsecureSkipVerify = do.skipVerify
+		if tlsConfig.ServerName == "" {
+			host, _, err := net.SplitHostPort(address)
+			if err != nil {
+				netConn.Close()
+				return nil, err
+			}
+			tlsConfig.ServerName = host
 		}
+
 		tlsConn := tls.Client(netConn, tlsConfig)
 		if err := tlsConn.Handshake(); err != nil {
+			netConn.Close()
 			return nil, err
 		}
 		netConn = tlsConn
@@ -186,6 +201,10 @@ func Dial(network, address string, options ...DialOption) (Conn, error) {
 	}
 
 	return c, nil
+}
+
+func dialTLS(do *dialOptions) {
+	do.dialTLS = true
 }
 
 var pathDBRegexp = regexp.MustCompile(`/(\d*)\z`)
@@ -240,16 +259,7 @@ func DialURL(rawurl string, options ...DialOption) (Conn, error) {
 	}
 
 	if u.Scheme == "rediss" {
-		// insert the options at the front, so all user provided options come
-		// after and override what we set
-		t := DialOption{func(do *dialOptions) {
-			do.dialTLS = true
-		}}
-		c := DialTLSConfig(&tls.Config{ServerName: host})
-		options = append(options, t, c)
-		copy(options[2:], options[0:])
-		options[0] = t
-		options[1] = c
+		options = append([]DialOption{{dialTLS}}, options...)
 	}
 
 	return Dial("tcp", address, options...)
