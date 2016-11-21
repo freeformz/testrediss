@@ -1,7 +1,6 @@
 package main
 
 import (
-	"crypto/tls"
 	"fmt"
 	"os"
 
@@ -15,7 +14,7 @@ func main() {
 		panic(err)
 	}
 	fmt.Println("url:", u)
-	c, err := redis.DialURL(u, redis.DialTLSConfig(&tls.Config{InsecureSkipVerify: true}))
+	c, err := redis.DialURL(u, redis.DialTLSSkipVerify(true))
 	if err != nil {
 		panic(err)
 	}
