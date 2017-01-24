@@ -20,6 +20,12 @@
 			"revisionTime": "2016-11-21T21:29:08Z"
 		},
 		{
+			"checksumSHA1": "YT7+pR4H6znMZJNP7U1BSnLQ2iM=",
+			"path": "github.com/heroku/x/hredis",
+			"revision": "dd26c601955073303f6b01e7d6ad73b16a606248",
+			"revisionTime": "2016-11-29T00:03:46Z"
+		},
+		{
 			"checksumSHA1": "+4r0PnLwwyhO5/jvU5R/TEJb4kA=",
 			"path": "gopkg.in/bsm/ratelimit.v1",
 			"revision": "db14e161995a5177acef654cb0dd785e8ee8bc22",

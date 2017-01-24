@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/freeformz/testrediss"
+	"github.com/heroku/x/hredis"
 	"gopkg.in/redis.v5"
 )
 
 func main() {
-	u, err := testrediss.RedissURL(os.Getenv("REDIS_URL"))
+	u, err := hredis.RedissURL(os.Getenv("REDIS_URL"))
 	if err != nil {
 		panic(err)
 	}

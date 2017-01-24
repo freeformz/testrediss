@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/freeformz/testrediss"
 	"github.com/garyburd/redigo/redis"
+	"github.com/heroku/x/hredis"
 )
 
 func testTLSSkipVerify() error {
 	fmt.Println("testTLSSkipVerify")
-	u, err := testrediss.RedissURL(os.Getenv("REDIS_URL"))
+	u, err := hredis.RedissURL(os.Getenv("REDIS_URL"))
 	if err != nil {
 		return err
 	}
@@ -37,7 +37,7 @@ func testTLSSkipVerify() error {
 
 func testCustomTLSConfig() error {
 	fmt.Println("testCustomTLSConfig")
-	u, err := testrediss.RedissURL(os.Getenv("REDIS_URL"))
+	u, err := hredis.RedissURL(os.Getenv("REDIS_URL"))
 	if err != nil {
 		return err
 	}
