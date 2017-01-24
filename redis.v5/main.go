@@ -1,6 +1,7 @@
 package main
 
 import (
+	"crypto/tls"
 	"fmt"
 	"os"
 
@@ -19,6 +20,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	o.TLSConfig = &tls.Config{InsecureSkipVerify: true}
 	c := redis.NewClient(o)
 	pong, err := c.Ping().Result()
 	if err != nil {
