@@ -128,47 +128,19 @@ func DialPassword(password string) DialOption {
 }
 
 // DialTLSConfig specifies the config to use when a TLS connection is dialed.
-// This has no effect when not dialing a TLS connection.
+//  Has no effect when not dialing a TLS connection.
 func DialTLSConfig(c *tls.Config) DialOption {
 	return DialOption{func(do *dialOptions) {
 		do.tlsConfig = c
 	}}
 }
 
-// DialTLSSkipVerify to set disable server name verification when connecting
-// over TLS.
+// DialTLSSkipVerify to disable server name verification when connecting
+// over TLS. Has no effect when not dialing a TLS connection.
 func DialTLSSkipVerify(skip bool) DialOption {
 	return DialOption{func(do *dialOptions) {
 		do.skipVerify = skip
 	}}
-}
-
-// similar cloneTLSClientConfig in the stdlib, but also honor skipVerify for the nil case
-func cloneTLSClientConfig(cfg *tls.Config, skipVerify bool) *tls.Config {
-	if cfg == nil {
-		return &tls.Config{InsecureSkipVerify: skipVerify}
-	}
-	return &tls.Config{
-		Rand:                        cfg.Rand,
-		Time:                        cfg.Time,
-		Certificates:                cfg.Certificates,
-		NameToCertificate:           cfg.NameToCertificate,
-		GetCertificate:              cfg.GetCertificate,
-		RootCAs:                     cfg.RootCAs,
-		NextProtos:                  cfg.NextProtos,
-		ServerName:                  cfg.ServerName,
-		ClientAuth:                  cfg.ClientAuth,
-		ClientCAs:                   cfg.ClientCAs,
-		InsecureSkipVerify:          cfg.InsecureSkipVerify,
-		CipherSuites:                cfg.CipherSuites,
-		PreferServerCipherSuites:    cfg.PreferServerCipherSuites,
-		ClientSessionCache:          cfg.ClientSessionCache,
-		MinVersion:                  cfg.MinVersion,
-		MaxVersion:                  cfg.MaxVersion,
-		CurvePreferences:            cfg.CurvePreferences,
-		DynamicRecordSizingDisabled: cfg.DynamicRecordSizingDisabled,
-		Renegotiation:               cfg.Renegotiation,
-	}
 }
 
 // Dial connects to the Redis server at the given network and

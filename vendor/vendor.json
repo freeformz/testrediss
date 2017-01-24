@@ -10,14 +10,14 @@
 		{
 			"checksumSHA1": "2UmMbNHc8FBr98mJFN1k8ISOIHk=",
 			"path": "github.com/garyburd/redigo/internal",
-			"revision": "883846756944ba1450adb0d7d3083b49d1b5c3b5",
-			"revisionTime": "2016-11-10T22:20:26Z"
+			"revision": "908534c8b97586a4597e3fa195875d2d26502b97",
+			"revisionTime": "2017-01-13T05:33:26Z"
 		},
 		{
-			"checksumSHA1": "IRBvxSTvvzr0pTdrvejVbBt1Bd8=",
+			"checksumSHA1": "C34bY5tWukPvD91vL46VydZ7sLU=",
 			"path": "github.com/garyburd/redigo/redis",
-			"revision": "cf12b6460e4df683e5a4f9f898f223b65dc85af6",
-			"revisionTime": "2016-11-21T21:29:08Z"
+			"revision": "908534c8b97586a4597e3fa195875d2d26502b97",
+			"revisionTime": "2017-01-13T05:33:26Z"
 		},
 		{
 			"checksumSHA1": "YT7+pR4H6znMZJNP7U1BSnLQ2iM=",
@@ -32,40 +32,40 @@
 			"revisionTime": "2016-02-20T15:49:07Z"
 		},
 		{
-			"checksumSHA1": "6gvGCe6dtbLoSVpaIJAw1Zjh6kg=",
+			"checksumSHA1": "Wryy554xobXiDkO7L10ejJXe14M=",
 			"path": "gopkg.in/redis.v5",
-			"revision": "019ff6eb38ef232dbf116aeb08780588be207417",
-			"revisionTime": "2016-11-11T23:47:49Z"
+			"revision": "8829ddcd8bdb333e477cc845946c4b9b2ef66280",
+			"revisionTime": "2017-01-16T08:01:07Z"
 		},
 		{
-			"checksumSHA1": "vQSE4FOH4EvyzYA72w60XOetmVY=",
+			"checksumSHA1": "MQyhe1N+NO0+uyJiEc6M2WGfb3s=",
 			"path": "gopkg.in/redis.v5/internal",
-			"revision": "019ff6eb38ef232dbf116aeb08780588be207417",
-			"revisionTime": "2016-11-11T23:47:49Z"
+			"revision": "8829ddcd8bdb333e477cc845946c4b9b2ef66280",
+			"revisionTime": "2017-01-16T08:01:07Z"
 		},
 		{
 			"checksumSHA1": "2Ek4SixeRSKOX3mUiBMs3Aw+Guc=",
 			"path": "gopkg.in/redis.v5/internal/consistenthash",
-			"revision": "019ff6eb38ef232dbf116aeb08780588be207417",
-			"revisionTime": "2016-11-11T23:47:49Z"
+			"revision": "8829ddcd8bdb333e477cc845946c4b9b2ef66280",
+			"revisionTime": "2017-01-16T08:01:07Z"
 		},
 		{
 			"checksumSHA1": "rJYVKcBrwYUGl7nuuusmZGrt8mY=",
 			"path": "gopkg.in/redis.v5/internal/hashtag",
-			"revision": "019ff6eb38ef232dbf116aeb08780588be207417",
-			"revisionTime": "2016-11-11T23:47:49Z"
+			"revision": "8829ddcd8bdb333e477cc845946c4b9b2ef66280",
+			"revisionTime": "2017-01-16T08:01:07Z"
 		},
 		{
-			"checksumSHA1": "MuVVHw/uzk6gwBsQ8deMYacmgTM=",
+			"checksumSHA1": "yLZQUKNxXzwGlzfXhWC0Mwme2nw=",
 			"path": "gopkg.in/redis.v5/internal/pool",
-			"revision": "019ff6eb38ef232dbf116aeb08780588be207417",
-			"revisionTime": "2016-11-11T23:47:49Z"
+			"revision": "8829ddcd8bdb333e477cc845946c4b9b2ef66280",
+			"revisionTime": "2017-01-16T08:01:07Z"
 		},
 		{
-			"checksumSHA1": "Pn4Vc2X2hUhm0SV7j82YlMW8j5o=",
+			"checksumSHA1": "KoSfO3h/KmlaGphIM4KzBGm65O4=",
 			"path": "gopkg.in/redis.v5/internal/proto",
-			"revision": "019ff6eb38ef232dbf116aeb08780588be207417",
-			"revisionTime": "2016-11-11T23:47:49Z"
+			"revision": "8829ddcd8bdb333e477cc845946c4b9b2ef66280",
+			"revisionTime": "2017-01-16T08:01:07Z"
 		}
 	],
 	"rootPath": "github.com/freeformz/testrediss"
